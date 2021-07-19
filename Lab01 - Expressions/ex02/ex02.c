@@ -2,6 +2,12 @@
 
 int main() {
     printf("<< Conversor Temperatura >>\n");
+    printf("Digite a temperatura (em Celsius):\n");
+    int n,res;
+    scanf("%d",&n);
+    res = (n*9/5)+32;
+    printf("%d graus Celsius correspondem a %d Fahrenheit\n",n,res);
+return 0;
 }
 
 /*

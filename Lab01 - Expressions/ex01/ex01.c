@@ -6,6 +6,7 @@ int main(){
     printf("Digite um numero: ");
     scanf("%d", &num);
     printf("O valor de %d ao quadrado eh %d",num,num*num);
+return 0;
 }
 
 /*

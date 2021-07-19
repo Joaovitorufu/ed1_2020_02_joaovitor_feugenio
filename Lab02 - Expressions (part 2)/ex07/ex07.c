@@ -1,7 +1,19 @@
 #include <stdio.h>
 
 int main() {
+    int a,b;
     printf("== Operadores Booleanos ==\n");
+    printf("Digite 0 para falso e nao 0 para verdadeiro");
+    printf("Entre com o primeiro valor (A): ");
+    scanf("%d",&a);
+    printf("Entre com o segundo valor (B): ");
+    scanf("%d",&b);
+    printf("A and B: %d\n",a&&b);
+    printf("A or B: %d\n",a||b);
+    printf("A xor B: %d\n",(a||b)&& !(a&&b));
+    printf("not A: %d\n",!a);
+
+
 }
 
 /*

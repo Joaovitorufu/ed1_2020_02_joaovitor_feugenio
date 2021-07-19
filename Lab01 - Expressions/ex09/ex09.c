@@ -2,7 +2,15 @@
 #include <math.h>
 
 int main() {
+    int x,y;
+    float d;
     printf("<< Distancia >>\n");
+    printf("Entre com a coordenada x: ");
+    scanf("%d",&x);
+    printf("Entre com a coordenada y: ");
+    scanf("%d",&y);
+    d = sqrt((x*x)+(y*y));
+    printf("A distancia entre os pontos (%d,%d) e (0,0) eh %.1f",x,y,d);
 }
 
 /*
