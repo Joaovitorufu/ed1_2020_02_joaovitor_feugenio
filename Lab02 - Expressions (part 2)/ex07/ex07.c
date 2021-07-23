@@ -3,7 +3,7 @@
 int main() {
     int a,b;
     printf("== Operadores Booleanos ==\n");
-    printf("Digite 0 para falso e nao 0 para verdadeiro");
+    printf("Digite 0 para falso e nao 0 para verdadeiro\n");
     printf("Entre com o primeiro valor (A): ");
     scanf("%d",&a);
     printf("Entre com o segundo valor (B): ");
