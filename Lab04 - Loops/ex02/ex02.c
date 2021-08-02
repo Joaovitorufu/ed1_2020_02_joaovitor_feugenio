@@ -3,10 +3,11 @@
 int main(){
     printf("<< Contagem regressiva >>\n");
     int i = 10;
-    while(i>=0){
-    printf("%d..",i);
-    i--;
-    }
+    do
+    {
+        printf("%d..",i);
+        i--;
+    } while (i>=0);
     printf("FIM!");
     return 0;
 }
