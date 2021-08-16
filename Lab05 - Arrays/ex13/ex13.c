@@ -1,7 +1,21 @@
 #include <stdio.h>
 
 int main(){
-    printf("<< Zerando negativos >>\n");
+  printf("<< Zerando negativos >>\n");
+   int i,vet[5];
+  for(i=0;i<5;i++)
+  {
+    printf("Entre com o numero %d:",i+1);
+    scanf("%d",&vet[i]);
+    if(vet[i]<0)
+    {
+      vet[i]=0;
+    }
+    
+  }
+  
+  printf("Negativos zerados: %d %d %d %d %d",vet[0],vet[1],vet[2],vet[3],vet[4]);
+  return 0;
 
     return 0;
 }

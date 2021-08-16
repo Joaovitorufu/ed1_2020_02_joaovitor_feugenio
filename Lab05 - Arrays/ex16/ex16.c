@@ -1,9 +1,37 @@
 #include <stdio.h>
 
 int main(){
-    printf("<< Valores iguais >>\n");
-
-    return 0;
+  printf("<< Valores iguais >>\n");
+   int vetor [8], vetor2[8], qtd_aparece[8], i, j, x=0, z=0, aparece, a=0, aux;
+  
+  for(i=0;i<8;i++){
+    printf("Entre com o numero %d: ",i+1);
+    scanf("%d",&vetor[i]);
+  }
+  
+    for(i=0;i<8;i++){
+      for(j=i;j<8;j++){
+        if(vetor[i] == vetor[j] && i != j){
+          aux=vetor[i+1];
+          vetor[i+1] = vetor[j];
+          vetor[j] = aux;
+        }
+      }
+    }
+    
+    printf("Valores repetidos:\n");
+    aparece = 1;
+    for(i=1;i<=8;i++){
+        if (vetor[i] == vetor[i-1]){
+          aparece++;
+          }
+          else if(aparece > 1){
+            printf("%d aparece %d vezes\n", vetor[i-1], aparece);
+            aparece = 1;
+          }
+    }
+  
+  return 0;
 }
 
 /*

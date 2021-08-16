@@ -2,7 +2,20 @@
 
 int main(){
     printf("<< Listando um vetor de numeros pares>>\n");
+    int vet[6],i=0;
+    while(i<6){
+        printf("Entre com o numero %d: ",i+1);
+        scanf("%d",&vet[i]);
+        if(vet[i] % 2 != 0){
+            printf("Valor invalido\n");
+        }else i++;
 
+    }
+    printf("os valores lidos sao:");
+    for(i=0;i<=5;i++){
+
+    printf("%d ",vet[i]);
+    }
 
     return 0;
 }

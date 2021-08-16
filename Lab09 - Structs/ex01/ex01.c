@@ -1,7 +1,13 @@
 #include <stdio.h>
 
 int main(){
-    printf("<<  >>\n");
+    printf("<< Telefone >>\n");
+    struct telefone
+    {
+        int ddd;
+        char tel[10];
+    };
+    
 
     return 0;
 }

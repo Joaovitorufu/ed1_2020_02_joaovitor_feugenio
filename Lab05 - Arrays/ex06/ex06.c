@@ -2,6 +2,28 @@
 
 int main(){
     printf("<< Five Values with index >>\n");
+     int vet[5],i,maior=0,menor=0,aux1=0,aux2=0;
+     float media=0;
+    for(i=0;i<5;i++){
+        printf("Entre com o numero %d: ",i+1);
+        scanf("%d",&vet[i]);
+        if(vet[i] >= maior){
+          maior = vet[i];
+          aux1=i;  
+        } 
+        if(vet[i] <= menor){
+            menor = vet[i];
+            aux2=i;
+        } 
+        media = media + vet[i];
+    }
+    printf("Os numeros digitados sao: ");
+    for(i=0;i<5;i++){
+        printf("%d ",vet[i]);
+    }
+    printf("\nO maior valor eh: %d localizado na posicao %d do vetor", maior,aux1);
+    printf("\nO menor valor eh: %d localizado na posicao %d do vetor", menor,aux2);
+    printf("\na media eh: %.1f", media/5);
 
     return 0;
 }

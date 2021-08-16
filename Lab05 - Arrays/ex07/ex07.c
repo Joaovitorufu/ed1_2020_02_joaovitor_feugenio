@@ -2,6 +2,23 @@
 
 int main(){
     printf("<< Normalizando as notas >>\n");
+    int vet[5],i,maior=0,aux;
+    float media,vet2[5];
+    for(i=0;i<5;i++){
+        printf("Entre com a nota do aluno %d: ",i+1);
+        scanf("%d",&vet[i]);
+        if(vet[i]>maior){
+            maior=vet[i];
+        }
+    }
+
+    
+    for(i=0;i<5;i++){
+        vet2[i]= ((float)vet[i]/maior)*100;
+        printf("A nota do aluno %d eh %d\n",i+1,(int)vet2[i]);
+    }
+
+    
 
     return 0;
 }

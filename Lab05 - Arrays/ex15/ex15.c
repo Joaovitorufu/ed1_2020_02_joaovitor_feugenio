@@ -1,9 +1,39 @@
 #include <stdio.h>
 
 int main(){
-    printf("<< Valores iguais >>\n");
-
-    return 0;
+  printf("<< Valores iguais >>\n");
+    int vetor [8], vetor2[8], i, j, x=0, z=0, repete;
+  
+  for(i=0;i<8;i++){
+    printf("Entre com o numero %d: ",i+1);
+    scanf("%d",&vetor[i]);
+  }
+  
+    for(i=0;i<8;i++){
+      repete = 0;
+      for(j=i+1;j<8;j++){
+        if (vetor[i] == vetor[j]){
+          repete++;
+          }
+        }
+      if(repete != 0){
+        if(repete == 1){
+          vetor2[z] = vetor[i];
+          x++;
+          z++;
+        }
+    }
+  }
+  
+  printf("Valores repetidos: ");
+  for(i=0;i<x;i++){
+    printf("%d",vetor2[i]);
+    if(i<x){
+      printf(", ");
+    }
+  }
+  
+  return 0;
 }
 
 /*
