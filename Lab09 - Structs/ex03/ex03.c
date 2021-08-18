@@ -1,7 +1,48 @@
 #include <stdio.h>
+#include <string.h>
+typedef struct 
+{
+    char rua[20];
+    char complemento[20];
+    char estado[3];
+    char cep[20];
+    int numero;
+    char cidade[20];
+}endereco;
 
 int main(){
-    printf("<<  >>\n");
+    printf("<< ENDERECOS >>\n");
+    endereco end[3];
+    int i=0;
+    while(i<3){
+        printf("Digite o nome da rua: ");
+        
+        gets(end[i].rua);
+        printf("Digite o numero da rua: ");
+        scanf("%d",&end[i].numero);
+        printf("Digite o complemento se houver: ");
+        getchar();
+        gets(end[i].complemento);
+        printf("Digite o nome da cidade: ");
+        gets(end[i].cidade);
+        printf("Digite o nome do estado: ");        
+        gets(end[i].estado);
+        printf("Digite o cep: ");
+        gets(end[i].cep);
+        printf("\n");
+        i++;
+        
+    }
+    printf("Enderecos cadastrados que sao de ""MG""\n");
+    for(i=0;i<3;i++){
+        if(end[i].estado[0]=='M'){
+            if(end[i].estado[1]=='G'){
+
+                printf("%s, %d. %s. %s-%s, %s.\n",end[i].rua,end[i].numero,end[i].complemento,end[i].cidade,end[i].estado,end[i].cep);
+            }
+        }
+        
+    }
 
     return 0;
 }

@@ -7,13 +7,25 @@ int main(){
     int *p; // cria uma variável do tipo ponteiro para inteiro, chamada p, e o 
             //conteúdo inicial é lixo
     p = &a; // faz p receber o endereço de a. Dizemos que p aponta para a
-
+        int val[5] = {2,4,5,8,10};
+        int *pval
+        pval=val[4];
+        int i;
     //(a)
+    printf("com &a: %x\n",&a);
+    printf("com *p: %x\n",p);
 
     //(b)
-
+    printf("Digite o valor que deseja: ");
+    scanf("%d",p);
+    printf("Valor alterado: %d\n",a);
     //(c)
+    printf("alterando o val[4]: ");
+    scanf("%d",pval);
+    for(i=0;i<5;i++){
 
+    printf("%d, ",val[i]);
+    }
     return 0;
 }
 

@@ -1,13 +1,29 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-int main(){
-    printf("<< Telefone >>\n");
-    struct telefone
+struct telefone
     {
         int ddd;
-        char tel[10];
+        char tel[20];
     };
-    
+
+int main(){
+    struct telefone tele[3];
+    int i=0;
+    printf("<< Telefone >>\n");
+    while(i<3){
+        printf("Digite o DDD: ");
+        scanf("%d",&tele[i].ddd);
+        printf("Digite o Telefone: ");
+        getchar();
+        gets(tele[i].tel);
+        i++;
+    }
+    printf("<<Os telefones cadastrados foram>>\n");
+    for(i=0;i<3;i++){
+        printf("(%d) %s\n",tele[i].ddd,tele[i].tel);
+    }
 
     return 0;
 }

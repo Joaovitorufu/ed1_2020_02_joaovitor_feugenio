@@ -1,8 +1,23 @@
 #include <stdio.h>
+double potencia(double x, int n){
+    int i;
+	if (n == 0) return 1;
+	else if (n > 0) for (i = 1; i < n; i++) x *= x;
+	else {
+		x = 1/x;
+		for (i = 1; i < (-n); i++) x *= x;
+	}
+	return x;
+}
 
 int main(){
+    double x;
+    int y;
     printf("Digite o valor de x: ");
+    scanf("%lf",&x);
     printf("Digite o valor de n: ");
+    scanf("%d",&y);
+    printf("%.0lf elevado a %d = %.0lf\n", x, y, potencia(x, y));
 
     return 0;
 }

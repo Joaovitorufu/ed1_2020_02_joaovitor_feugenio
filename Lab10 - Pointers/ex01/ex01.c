@@ -2,7 +2,15 @@
 
 int main(){
     printf("<< Pointers >>\n");
+    int val[5] = {2,4,5,8,10};
+    int i,*pval;
+    pval=&val[2];
+    printf("Digite o numero novo da posicao 2: ");
+    scanf("%d",pval);
+    for(i=0;i<5;i++){
 
+    printf("%d, ",val[i]);
+    }
     return 0;
 }
 

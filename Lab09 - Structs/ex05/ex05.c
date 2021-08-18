@@ -1,7 +1,78 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+typedef struct{
+    int matricula;
+    char nome[20];
+    float np1;
+    float np2;
+    float np3;
+    float media;
+    int faltas;
+}alunos;
 
 int main(){
-    printf("<<  >>\n");
+    printf("<< SITUACAO ALUNOS >>\n");
+    alunos aluno[3];
+    int i;
+    float nota1=0,maiorMedia=0,menorMedia=100,soma=0;
+    char alunoMaior[20],alunoMenor[20],alunoMnota[20];
+    for(i=0;i<3;i++){
+
+    printf("Entre com os dados do %d aluno \n",i+1);
+    printf("Matricula: ");
+    scanf("%d",&aluno[i].matricula);
+    printf("Nome: ");
+    getchar();
+    gets(aluno[i].nome);
+    printf("Nota da 1 prova: ");
+    scanf("%f",&aluno[i].np1);
+    printf("Nota da 2 prova: ");
+    scanf("%f",&aluno[i].np2);
+    printf("Nota da 3 prova: ");
+    scanf("%f",&aluno[i].np3);
+    printf("Numero de faltas: ");
+    scanf("%d",&aluno[i].faltas);
+
+    if(nota1<aluno[i].np1){
+        nota1=aluno[i].np1;
+        strcpy(alunoMnota,aluno[i].nome);
+
+    }
+
+    soma = aluno[i].np1+aluno[i].np2+aluno[i].np3;
+    aluno[i].media=soma/3;
+
+    if(maiorMedia<aluno[i].media){
+        maiorMedia=aluno[i].media;
+        strcpy(alunoMaior,aluno[i].nome);
+    }
+    if(menorMedia>aluno[i].media){
+        menorMedia=aluno[i].media;
+        strcpy(alunoMenor,aluno[i].nome);
+    }
+    
+
+    }
+    printf("\nAluno com maior nota na prova 1 foi %s com %.1f pontos.\n",alunoMnota,nota1);
+    printf("O aluno com a Maior media foi %s com %.1f pontos\n",alunoMaior,maiorMedia);
+    printf("O aluno com a Menor media foi %s com %.1f pontos\n",alunoMenor,menorMedia);
+    printf("\nSituacao dos alunos\n");
+    for(i=0;i<3;i++){
+
+
+
+        if(aluno[i].faltas<=18&&aluno[i].media>=60){
+        printf("%d - %s. Aprovado\n",i+1,aluno[i].nome);      
+    }else
+    if(aluno[i].faltas>18){
+        printf("%d - %s. Reprovado por falta\n",i+1,aluno[i].nome);
+    }else
+    if(aluno[i].media<60){
+        printf("%d - %s. Reprovado por nota\n",i+1,aluno[i].nome);
+    }
+    }
 
     return 0;
 }

@@ -1,9 +1,51 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int main(){
-    printf("<<  >>\n");
+typedef struct {
+	char nome[20];
+	double pot;
+	double tempo;
+} Eletro;
 
-    return 0;
+int main() {
+  
+	int dias,i;
+	double conTotal = 0.0, conRelativo[5] = {0};
+	Eletro vet[5];
+	for (i = 0; i < 5; i++) {
+		printf("Informe os dados do %d eletrodomestico\n", i+1);
+		printf("Nome: ");
+		fgets(vet[i].nome, 20, stdin);
+		vet[i].nome[strcspn(vet[i].nome, "\n")] = '\0';
+		printf("Potencia: ");
+		scanf("%lf", &vet[i].pot);
+		printf("Tempo ativo por dia: ");
+		scanf("%lf", &vet[i].tempo);
+		getchar();
+		conRelativo[i] = vet[i].pot * vet[i].tempo;
+		conTotal += conRelativo[i];
+		printf("\n");
+	}
+	printf("Informe um valor de tempo(em dia):\n");
+	scanf("%d", &dias);
+
+	conTotal *= dias;
+	for (i = 0; i < 5; i++) {
+		conRelativo[i] *= dias;
+	}
+
+	printf("\nConsumo total: %.0lf kW\n\n", conTotal);
+	printf("Consumo relativo:\n");
+	for (i = 0; i < 5; i++) {
+		printf("%s %.1lf%%\n", vet[i].nome,(conRelativo[i]*100)/conTotal);
+	}
+	printf("Mapa de memoria:\n\n");
+	for(i=0;i<5;i++)
+	{
+	  printf("Enderecos do %d eletrodomestico\n",i+1);
+	  printf("Endereco Nome: %x\nEndereco Potencia: %x\nEndereco Tempo ativo: %x\n\n",&vet[i].nome,&vet[i].pot,&vet[i].tempo); 
+	}
 }
 
 /*
@@ -85,7 +127,7 @@ Mapa de memória (altere os endereços)
 +----------+----------------+---------------+------+--+
 | 0 / NULL |   indefinido   |      ----     | ---- |  |
 +----------+----------------+---------------+------+--+
-|     1    |                |               |      |  | 
+| 60fde8   |                |   Geladeira   |vet[0]|  | 
 +----------+----------------+---------------+------+--+
 |     2    |                |               |      |  |
 +----------+----------------+---------------+------+--+
@@ -181,4 +223,31 @@ Mapa de memória (altere os endereços)
 +---------------------------+---------------+------+--+
 | Programa 32   bits        |               |      |  |
 +---------------------------+---------------+------+--+
+
+
+Enderecos do 1 eletrodomestico
+Endereco Nome: 60fde8
+Endereco Potencia: 60fe00
+Endereco Tempo ativo: 60fe08
+
+Enderecos do 2 eletrodomestico
+Endereco Nome: 60fe10
+Endereco Potencia: 60fe28
+Endereco Tempo ativo: 60fe30
+
+Enderecos do 3 eletrodomestico
+Endereco Nome: 60fe38
+Endereco Potencia: 60fe50
+Endereco Tempo ativo: 60fe58
+
+Enderecos do 4 eletrodomestico
+Endereco Nome: 60fe60
+Endereco Potencia: 60fe78
+Endereco Tempo ativo: 60fe80
+
+Enderecos do 5 eletrodomestico
+Endereco Nome: 60fe88
+Endereco Potencia: 60fea0
+Endereco Tempo ativo: 60fea8
+
 */

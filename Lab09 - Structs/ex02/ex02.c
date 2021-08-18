@@ -1,7 +1,33 @@
 #include <stdio.h>
-
+#include <string.h>
+struct data{
+    int dia;
+    char mes[10];
+    int ano;
+};
 int main(){
-    printf("<<  >>\n");
+    int i=0,aux=0;
+    struct data date[3];
+    printf("<< Data >>\n");
+    while(i<3){
+        printf("Digite o dia: ");
+        scanf("%d",&date[i].dia);
+        printf("Digite o mes: ");
+        getchar();
+        gets(date[i].mes);
+        printf("Digite o ano: ");
+        scanf("%d",&date[i].ano);
+        printf("\n");
+        i++;
+    }
+    printf("<<DATAS CADASTRADAS>>\n");
+    for(i=0;i<3;i++){
+        printf("Dia %d de %s de %d\n",date[i].dia,date[i].mes,date[i].ano);
+        if(aux<date[i].ano){
+            aux=date[i].ano;
+        }
+    }
+    printf("\nMaior ano foi: %d",aux);
 
     return 0;
 }
