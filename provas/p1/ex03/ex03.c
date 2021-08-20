@@ -27,16 +27,39 @@
 +-------------------+-----------------------------------------------+----------------+
 
 */
+int clucro(int pcompra, int pvenda){
+    int lb;
+    float total;
+    lb = pvenda - pcompra;
+    total = lb/(float)pvenda;
+    total=total*100;
+if(total>40){
+    return 4;
+}else
+if(total>20 && total <= 40){
+    return 3;
+}else
+if(total>0<=20){
+    return 2;
+    }
+else
+if(total<0){
+    return 1;
+}else return -1;
 
+}
 int main(){
+    int pcompra,pvenda,ret;
 
    // Ex03: utilizando a função de cálculo de lucro, leia o preço de compra e venda
    // e mostre o percentual de lucro ou prejuízo e a classificação de acordo com
    // a tabela acima. 
    printf("Digite o preco de compra:");
-
+    scanf("%d",&pcompra);
    printf("Digite o preco de venda:");
-   
+    scanf("%d",&pvenda);
+   ret=clucro(pcompra,pvenda);
+   if(ret==1)printf("prejuizo\n");
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
