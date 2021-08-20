@@ -61,10 +61,10 @@ int main(){
    printf("Digite o preco de venda:");
     scanf("%d",&pvenda);
    ret=clucro(pcompra,pvenda);
-   if(ret==1)printf("prejuizo\n");
-   if(ret==2)printf("lucro pequeno\n");
-   if(ret==3)printf("lucro bom\n");
-   if(ret==4)printf("lucro alto\n");
+   if(ret==1)printf("preco de compra: %d; preco de venda: %d;prejuizo\n",pcompra,pvenda);
+   if(ret==2)printf("preco de compra: %d; preco de venda: %d;lucro pequeno\n",pcompra,pvenda);
+   if(ret==3)printf("preco de compra: %d; preco de venda: %d;lucro bom\n",pcompra,pvenda);
+   if(ret==4)printf("preco de compra: %d; preco de venda: %d;lucro alto\n",pcompra,pvenda);
    if(ret==-1)printf("valor invalido\n");
 
    // exemplo de saída:

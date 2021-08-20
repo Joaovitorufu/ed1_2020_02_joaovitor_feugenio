@@ -1,8 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+struct ponto{
+    float x;
+    float y;
+};
+struct circulo{
+    struct pronto pcentral;
+    raio;
+};
 int main(){
+    float area,distancia;
+    struct circulo c1;
+    
+    
 
    // Ex04: Um círculo pode ser definido com duas informações
    // - um ponto central; que é sua coordenada x,y no espaço cartesiano
