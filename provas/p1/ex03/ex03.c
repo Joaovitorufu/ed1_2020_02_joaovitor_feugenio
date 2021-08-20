@@ -33,13 +33,15 @@ int clucro(int pcompra, int pvenda){
     lb = pvenda - pcompra;
     total = lb/(float)pvenda;
     total=total*100;
+
+
 if(total>40){
     return 4;
 }else
 if(total>20 && total <= 40){
     return 3;
 }else
-if(total>0<=20){
+if(total>0&& total <=20){
     return 2;
     }
 else
@@ -60,6 +62,11 @@ int main(){
     scanf("%d",&pvenda);
    ret=clucro(pcompra,pvenda);
    if(ret==1)printf("prejuizo\n");
+   if(ret==2)printf("lucro pequeno\n");
+   if(ret==3)printf("lucro bom\n");
+   if(ret==4)printf("lucro alto\n");
+   if(ret==-1)printf("valor invalido\n");
+
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
