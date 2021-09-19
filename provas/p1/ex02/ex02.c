@@ -13,6 +13,13 @@ struct livro {
 // - Entrada: todos os livros cadastrados 
 // - Saída: índice do vetor indicando o livro usado mais antigo
 // (se houver empate pode ser retornado qualquer um dos livros)
+
+
+// check:<<<erro: e2.5: a busca deve considerar somente os livros usados>>>>
+// check:<<<erro: e2.6aa: Na busca está ocorrendo somente a comparação o menor/maior e este não está sendo atualizado>>>>
+// check:<<<erro: e2.6c: está comparando índice com o valor do ano>>>>
+// check:<<<erro: e2.6d: se todos os livros são novos o programa vai retornar errado>>>>
+
 void buscar (struct livro *p,int n,int *pantigo){
     int i,lantigo=10000;
     for(i=0;i<n;i++){
@@ -49,6 +56,7 @@ int main(){
         scanf("%d",&livros[i].ano);
         printf("\n");
     }
+    // check:<<<comentário: nesse exercicio podia fazer por retorno>>>>
     buscar(livros,n,&pantigo);
    printf("Livro usado mais antigo: \n");
     printf("nome: %s\npreco: %.2f\nestado: %s\nano:%d\n",livros[pantigo].nome,livros[pantigo].preco,livros[pantigo].estado,livros[pantigo].ano);

@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
+// check:<<<erro: e4.1: Definição da estrutura está errada>>>>
+
 struct ponto{
     float x;
     float y;
 };
 struct circulo{
     struct pronto pcentral;
-    raio;
+    raio;// check:<<<erro: ?>>>>
 };
 int main(){
     float area,distancia;
