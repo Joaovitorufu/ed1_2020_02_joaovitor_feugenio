@@ -15,7 +15,7 @@
 struct livro {
     char nome[20];
     float preco;
-    char estado[20];
+    char estado[20];// check:<<<erro: e1.01a: Novo/Usado deve ser booleano (no caso, int) ; Pode-se usar um char, mas com isso exige-se sempre uma comparação de valores>>>>
     int ano;
 };
 
@@ -48,7 +48,7 @@ int main(){
     }
 
     
-
+// check:<<<erro: e1.5: Falou liberar memória com free>>>>
     
 
 
