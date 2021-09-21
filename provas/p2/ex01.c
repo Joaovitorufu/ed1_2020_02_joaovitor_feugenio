@@ -21,3 +21,24 @@ troca_pos_lista( lista, 4, 10)
  };
 
 */
+#define MAX 100
+struct lista
+ {
+    int qtd;
+    struct aluno dados[MAX];
+ };
+
+int troca_pos_lista(lista * li, int pos1,int pos2){
+   struct aluno al;
+   if (li == NULL)
+        return -1;
+   if (pos1 <=0 || pos1 > li->qtd)
+        return -1;
+   if (pos2 <=0 || pos2 > li->qtd)
+        return -1;
+     al = li ->dados[pos1-1];    
+    li->dados[pos1-1] = li -> dados[pos2-1]; 
+    li->dados[pos2-1] = al; 
+    
+   return 0;
+}
