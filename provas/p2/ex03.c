@@ -32,3 +32,4 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
+// check:<<<erro: não entregou o exercício>>>>

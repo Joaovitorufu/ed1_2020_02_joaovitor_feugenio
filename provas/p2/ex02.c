@@ -28,6 +28,8 @@ int remove_intervalo_lista(lista *li,int pos1 ,int pos2){
         return -1;
    if (pos2 <=0 || pos2 > li->qtd)
         return -1;   
+        // check:<<<erro: e2.2: erro em testes de tamanho da lista com as posições de remoção (posições aceitas >=1 <=qtd/ teste de lista null // start>end>>>>
+        // check:<<<erro: e2.3: Um só laço deve ser usado O(n). Da forma como está envolve deslocar os mesmos elementos várias vezes O(N²)>>>>
     while(i <= remover){
     for(int j = i; j < li->qtd-1 ; j++){
         li->dados[j] = li->dados[j+1];
